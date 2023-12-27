@@ -34,6 +34,20 @@ function onClear() {
 
 lst.addEventListener('click', onClear);
 
+const butt = document.querySelector('h1');
+
+const onDoubleClick = () => console.log('you clicked me twice!!');
+
+butt.addEventListener('mousedown', onDoubleClick);
+
+const lst2 = document.querySelector('li');
+
+function onClick2(e) {
+    console.log(e.target);
+    console.log(e.currentTarget);
+}
+
+lst2.addEventListener('dblclick', onClick2);
 
 
 
