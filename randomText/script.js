@@ -49,5 +49,49 @@ function onClick2(e) {
 
 lst2.addEventListener('dblclick', onClick2);
 
+let intervalId;
+
+function startChange() {
+    if (!intervalId) {
+        intervalId = setInterval(changeRandomColor, 500);
+    }
+}
+
+function changeRandomColor() {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = `#${randomColor}`;
+}
+
+function stopChange() {
+    clearInterval(intervalId);
+}
+
+document.querySelector('.changeStart').addEventListener('click', startChange);
+document.querySelector('.changeStop').addEventListener('click', stopChange);
 
 
+
+
+const posts = [
+    { title: 'Post One', body: 'This is post one' },
+    { title: 'Post Two', body: 'This is post two' },
+];
+
+function createPost(post, cb) {
+    setTimeout(() => {
+        posts.push(post);
+        cb();
+    }, 2000);
+}
+
+function getPosts() {
+    setTimeout(() => {
+        posts.forEach(function (post) {
+            const div = document.createElement('div');
+            div.innerHTML = `<strong>${post.title}</strong> - ${post.body}`;
+            document.querySelector('#posts').appendChild(div);
+        });
+    }, 1000);
+}
+
+createPost({ title: 'Post Three', body: 'This is post three' }, getPosts());
