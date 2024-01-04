@@ -1,0 +1,15 @@
+div {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 90px;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 2px;
+}
+
+.done {
+    font-weight: bolder;
+    border: 3px solid blue;
+    background-color: darkgrey;
+}

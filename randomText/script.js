@@ -94,4 +94,25 @@ function getPosts() {
     }, 1000);
 }
 
-createPost({ title: 'Post Three', body: 'This is post three' }, getPosts());
+createPost({ title: 'Post Three', body: 'This is post three' }, getPosts);
+
+
+
+
+
+// destructuring in JS
+// const obj = {
+//     id: 1,
+//     title: 'Hello World',
+//     body: 'My name is Harry',
+//     age: 23,
+//     city: 'Berkeley',
+//     state: 'CA',
+// };
+
+// function sim({ id, title, body, age, city, state }) {
+//     console.log(`${title}, ${body}. I'm ${age} years old, and I live in ${city}, ${state}.`);
+// }
+
+// sim(obj);
+
